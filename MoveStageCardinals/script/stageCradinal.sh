@@ -1,10 +1,10 @@
 #!/bin/bash
 # Set file and directory paths
-cardinal_cost_file="/home/sriharipriya/BatchJobsDemo/MoveStageCardinals/script/cardinal_cost_file.csv"
+#cardinal_cost_file="/home/sriharipriya/BatchJobsDemo/MoveStageCardinals/script/cardinal_cost_file.csv"
 source_directory="/home/sriharipriya/BatchJobsDemo/MoveStageCardinals/source_directory/"
 # Move Cardinal cost file to source directory
 echo "Moving Cardinal cost file to source directory..."
-mv "$cardinal_cost_file" "$source_directory"
+mv "/home/sriharipriya/BatchJobsDemo/MoveStageCardinals/script/cardinal_cost_file.csv" "$source_directory"
 # Set database connection details
 central_db_host="localhost"
 central_db_user="root"
