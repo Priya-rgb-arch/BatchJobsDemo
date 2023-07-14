@@ -16,7 +16,7 @@ central_db_name="EPRN_Central "
 
 # Load product cost file into the EPRN Central database
 echo "Loading product cost file into the EPRN Central database..."
-mysql -h $central_db_host -u $central_db_user -p$central_db_password $central_db_name << EOF
+mysql -h $central_db_host -u $central_db_user -p$central_db_password --local-infile=1 $central_db_name << EOF
 LOAD DATA INFILE '$source_directory/cardinal_cost_file.csv'
 INTO TABLE Product_Cardinal
 FIELDS TERMINATED BY ',' ENCLOSED BY '"'
@@ -32,7 +32,7 @@ store_db_name="store_DB"
 
 # Push cost changes to the store database
 echo "Pushing cost changes to the store database..."
-mysql -h $store_db_host -u $store_db_user -p$store_db_password $store_db_name << EOF
+mysql -h $store_db_host -u $store_db_user -p$store_db_password --local-infile=1 $store_db_name << EOF
 UPDATE Product_Store AS sp
 JOIN Product_Cardinal AS pc ON sp.Product_ID = pc.Product_ID
 SET sp.Price = pc.Price;
