@@ -22,14 +22,10 @@ INTO TABLE Product_Cardinal
 FIELDS TERMINATED BY ',' ENCLOSED BY '"'
 IGNORE 1 LINES;
 EOF
-
-
 store_db_host="localhost"
 store_db_user="root"
 store_db_password="priya"
 store_db_name="store_DB"
-
-
 # Push cost changes to the store database
 echo "Pushing cost changes to the store database..."
 mysql -h $store_db_host -u $store_db_user -p$store_db_password --local-infile=1 $store_db_name << EOF
