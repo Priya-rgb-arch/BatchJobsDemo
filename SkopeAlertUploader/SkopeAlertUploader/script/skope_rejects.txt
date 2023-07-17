@@ -1,4 +1,0 @@
-reject: Invalid input
-reject: Access denied
-reject: Duplicate entry
-reject: Insufficient privileges
