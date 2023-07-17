@@ -10,7 +10,7 @@ store_table_name="Product_Cardinal"
 # Load product cost file into the EPRN Central database
 echo "Loading product cost file into the EPRN Central database..."
 mysql -h $central_db_host -u $central_db_user -p$central_db_password $central_db_name << EOF
-LOAD DATA LOCAL INFILE '$cardinal_cost_file/cardinal_cost_file.csv'
+LOAD DATA LOCAL INFILE 'cardinal_cost_file.csv'
 INTO TABLE Product_Cardinal
 FIELDS TERMINATED BY ',' 
 LINES TERMINATED BY '\n'
